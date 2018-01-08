@@ -9,3 +9,8 @@
 [remote "origin"]
 	url = git@github.com:AppInfoManager/AppInfoManager.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
+
+
+
+
+	你好
