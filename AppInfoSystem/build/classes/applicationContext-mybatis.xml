@@ -46,6 +46,11 @@
  	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
  		<property name="dataSource" ref="dataSource"/>
  		<property name="configLocation" value="classpath:mybatis-config.xml"/>
+ 		<property name="mapperLocations">
+ 		  <list>
+ 		   <value>classpath:cn/appsys/dao/*.xml</value>
+ 		  </list>
+ 		</property>
  	</bean>
  	
  	<aop:aspectj-autoproxy/>
@@ -56,8 +61,8 @@
       
  	<tx:advice id="myAdvice" transaction-manager="txManager">  
     	<tx:attributes>  
-	        <tx:method name="appsys*"  propagation="REQUIRED" rollback-for="Exception"  />
-	        <tx:method name="*" />
+	        <tx:method name="app*"  propagation="REQUIRED" rollback-for="Exception"  />
+	        <tx:method name="*"/>
     	</tx:attributes>  
  	</tx:advice>
     
